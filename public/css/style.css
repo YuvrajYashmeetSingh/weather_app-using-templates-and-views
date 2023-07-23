@@ -1,0 +1,225 @@
+  *{padding: 0;margin: 0;box-sizing: border-box;font-family: 'Montserrat', sans-serif;font-weight:600;}
+body{
+    height: 100vh;
+    width: 100vw;
+
+}
+.navbar{
+    height: 6vw;
+    width: 100%;
+    display: flex;
+    background-color: rgb(144, 214, 214);
+}
+.author{
+    font-size: 2vw;
+    text-align: center;
+    width: 35vw;
+    display: flex;
+    height: 6vw;
+ 
+    align-items: center;
+    justify-content: center;
+  
+}
+.page{
+    font-size: 1.5vw;
+    width: 65vw;
+    display: flex;justify-content: space-around;
+    align-items: center;
+}.page a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+ 
+}
+.content{
+    display: flex;
+    width: 100vw;
+    height: 80%;
+}
+.info{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding-top: 10vw;
+}
+.info h4{
+    padding-right: 15vw;
+    color: rgb(105, 105, 105);
+    font-size: 1.5vw;
+    text-transform: capitalize;
+ 
+
+    word-spacing: .3vw
+}
+.info h1{
+    color: rgb(58, 57, 57);
+    font-size: 2.3vw;  word-spacing: .4vw;
+    padding-top: 1vw;
+ 
+
+    text-transform: capitalize;
+padding-left: 4vw;
+}.info h1 strong{
+    color: teal;
+
+}
+button{
+    font-size: 1.5vw;
+    width: 6vw;
+    height: 3vw;
+ 
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    border-radius: 1vw;
+    box-shadow: 0vw .1vw  rgb(206, 198, 198);
+}
+.info a{
+       padding-top: 2vw;
+   
+}
+.footer{
+    width: 100vw;
+    height: 6vw;
+    bottom: 0;
+    background-color: thistle;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: capitalize;
+ 
+}
+.footer h4{
+    font-size: 2.2w;
+}
+.weatherimg{
+    width: 50vw;
+    height: 80%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+img{
+    width: 30vw;
+   
+}
+@media (max-width:500px){
+    .navbar{
+        height: 15vw;
+        width: 100%;
+        display: flex;
+        background-color: rgb(144, 214, 214);
+    }
+    .author{
+        font-size: 4.5vw;
+        text-align: center;
+        width: 35vw;
+        display: flex;
+        height: 15vw;
+     
+        align-items: center;
+        justify-content: center;
+      
+    }
+    .page{
+        font-size: 3.5vw;
+        width: 65vw;
+        display: flex;
+
+        align-items: center;
+    }.page a{
+        text-decoration: none;
+        text-transform: capitalize;
+        color: black;
+     
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 90vw;
+    }
+    .info{
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: white;
+        padding-top: 10vw;
+    }
+    .info h4{
+ 
+        color: rgb(105, 105, 105);
+        font-size: 4.5vw;
+        text-transform: capitalize;
+     font-weight: 900;
+    color: teal;
+        word-spacing: .3vw
+    }
+    .info h1{
+        color: rgb(58, 57, 57);
+        font-size: 4.3vw;  word-spacing: .4vw;
+        padding-top: 1vw;
+     
+    
+        text-transform: capitalize;
+    padding-left: 4vw;
+    }.info h1 strong{
+        color: teal;
+    
+    }
+    button{
+        font-size: 3.5vw;
+        width: 12vw;
+        height: 7vw;
+     
+        text-transform: capitalize;
+        border: none;
+        outline: none;
+        border-radius: 2vw;
+        box-shadow: 0vw .1vw  rgb(206, 198, 198);
+    }
+    .info a{
+           padding-top: 10vw;
+       
+    }
+    .footer{
+        width: 100vw;
+        height: 15vw;
+        bottom: 0;
+        background-color: thistle;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-transform: capitalize;
+     
+    }
+    .footer h4{
+        font-size: 5vw;
+    }
+    .weatherimg{
+        width: 100vw;
+        height: 40vw;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+    img{
+        margin-top: 30vw;
+        width: 60vw;
+       
+    }
+
+    
+}

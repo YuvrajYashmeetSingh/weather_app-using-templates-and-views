@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link  rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+    <!-- nav bar -->
+{{>header}}
+<!-- navbar end -->
+
+<!-- content -->
+<div class="content">
+    <div class="info"><h4>Welcome to our weather app</h4><br>
+    <h1>Get the latest and accurate <strong>weather</strong>  infomation of your city</h1>
+    <a href="/weather" class="check"><button>check</button></a>
+    </div>
+    <div class="weatherimg" >
+        <img src="https://img.icons8.com/color/480/000000/partly-cloudy-day--v2.png " id="weatherimg1"/></div>
+</div>
+    <!-- content end -->
+
+    <!-- footer -->
+    <div class="footer">
+        <h4>designed by Yuvraj yashmeet singh</h4>
+        <h4>copyright @2023</h4>
+    </div>
+
+  
+</body>
+<script>
+    const weatherImg=["https://img.icons8.com/color/480/000000/partly-cloudy-day--v2.png",
+    "https://img.icons8.com/color/480/000000/cloud-lighting--v2.png","https://img.icons8.com/color/480/000000/summer--v2.png",
+    "https://img.icons8.com/color/480/000000/rain--v2.png"];
+//let weather=document.getElementById("weatherimg1");
+var img=document.querySelector("img");
+  let i=0; console.log(weatherImg[i])
+  let j=4
+setInterval(() => {
+    
+  if(i>weatherImg.length-1){
+
+     i=0;
+     
+
+  }
+  img.src=weatherImg[i];i++;
+   //weather.innerHTML='<img src="'+weatherImg[i]+'" "/>';
+ console.log(i)
+      
+}, 3000);
+
+
+</script>
+</html>

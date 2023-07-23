@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="weather.css"> -->
+    <link rel="stylesheet" href="css/weath1.css">
+    <title>Document</title>
+</head>
+<body>
+            <!-- nav bar -->
+  <div class="navbar">
+    <div class="author">Yuvraj Weather</div>
+    <div class="page">
+        <a href="/home" class="home">home</a>
+        <a href="/weather" class="weather">weather</a>
+        <a href="/about" class="aboutus">about</a>
+    </div></div>
+<!-- navbar end -->
+<div class="weatherbox">
+  <div class="input"><input type="search" placeholder="enter your city name" id="input1">
+   <button id="search"><img src="https://img.icons8.com/material-two-tone/24/000000/search.png" alt="" ></button>
+  </div>
+  <div class="wimg"> <img src="https://img.icons8.com/fluent/144/000000/weather.png" alt="weather img" id="weatherimg"></div>
+  <div class="winfo">
+    <div class="mood">
+      <div class="type" id="type"> <h2>Rain</h2></div>
+      <div class="place" id="area"><h1>jammu , in</h1></div>
+      <div class="flag"><img src="https://flagsapi.com/IN/flat/64.png" alt="country flagimg" id ="imgflag"></div>
+    </div>
+    <div class="temp">
+<div class="maintemp" id="maintemp"><h1>25</h1></div>
+<div class="mintemp" id="mintemp">min temp  : 20 </div>
+<div class="maxtemp" id="maxtemp">max temp : 25</div>
+    </div>
+    <div class="date">
+<div class="accudate" id="accurate"> 23/07/2022</div>
+<div class="time" id="time">9.00 am</div>
+
+</div>
+  </div>
+
+</div>
+<!-- about us -->
+
+<!-- about us end -->
+
+<div class="footer">
+    <h4>designed by Yuvraj Yashmeet Singh</h4>
+    <h4>copyright @2023</h4>
+</div>
+</body>
+<script>
+     let temp1,temp2,temp3; 
+    
+let search=document.getElementById("search");
+let input=document.getElementById("input1");
+let area=document.getElementById("area")
+let maintemp=document.getElementById("maintemp")
+let mintemp=document.getElementById("mintemp")
+let maxtemp=document.getElementById("maxtemp")
+let weatheri=document.getElementById("weatherimg")
+let type=document.getElementById("type")
+let accurate=document.getElementById("accurate")
+let place;
+let imgflag=document.getElementById("imgflag")
+input.onchange=(event)=>{
+  place=event.target.value;console.log(place)
+}
+//time
+let time1=document.getElementById("time")
+let fullDate,time,month,day,hours,min,hour1,year,date,min1,sec,sec1;
+    setInterval(() => {// code for time and date
+       date=new Date();
+   month=date.getMonth();
+   day=date.getDate();
+   year=date.getFullYear();
+   hours=date.getHours();
+   min=date.getMinutes();
+  sec=date.getSeconds();
+
+   (min<10)? min1=`0${min}`:min1=min;;
+   (sec<10)? sec1=`0${sec}`:sec1=sec;
+   (hours>=12)?hour1=hours-12:hour1=`${hours}`;
+     time=`${hour1 }:${ min1}:${ sec1}`;
+     fullDate=`${day}:${month+1}:${year}`;
+     console.log(fullDate);
+time1.innerText=`${time}`
+accurate.innerHTML=`${fullDate}`;
+    }, 1000);
+
+search.onclick=async()=>{
+
+  try {
+    
+    let apiurl=`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=170b40dde43a8167aa5d8befa3f4365b`;// api 
+    
+let Data= await fetch (apiurl);// fetching data ,await fn sa aga vala vi data bi fetch ho sakta  jab tak ja data fetch hota
+let weatherData=await Data.json(); // converting the data
+
+
+const {temp,temp_min,temp_max}=weatherData.main; // object destructuring
+const{main}=weatherData.weather[0];
+const {name}=weatherData;
+const {country}=weatherData.sys;
+
+
+temp1=Math.ceil(temp-273.15);
+     temp2=Math.ceil(temp_min-273.15);    temp3=Math.ceil(temp_max-273.15);// temp k to c
+type.innerText=`${main}`;
+area.innerText=`${name} , ${country}`;
+     maintemp.innerText=`${temp1}°c`
+     mintemp.innerText=`Min temp-${temp2}°c`;
+     maxtemp.innerText=`Max temp -${temp3}°c`;
+let countrycode=`https://flagsapi.com/${country}/flat/64.png`;
+imgflag.src=countrycode;
+
+//mood
+if(main)// it is weather mood means rain,sunny,clear,snow ,haze etc
+{
+
+  switch (main) {
+    case "Clouds": 
+weatheri.src="https://img.icons8.com/fluent/144/000000/weather.png" 
+
+      break;
+  case "Rain":
+  weatheri.src ="https://img.icons8.com/office/160/000000/heavy-rain.png"//rainy
+    break;
+    case 'Clear':
+   weatheri.src="https://img.icons8.com/emoji/96/000000/sun-emoji.png";
+   
+   
+      break;
+      case "Haze":
+        weatheri.src="https://img.icons8.com/fluent/96/000000/fog-day.png"
+        break;
+        case "Snow":
+          weather.src="https://img.icons8.com/fluent/96/000000/snow.png"
+      break;
+      case "Drizzle":
+        weatheri.src="https://img.icons8.com/ios/150/000000/rainy-weather.png";
+        break;
+case "Thunderstorm":
+  weatheri.src="https://img.icons8.com/ios/100/0000/storm--v100.png";
+  break;
+      default:
+        weatheri.src="https://img.icons8.com/ios/100/000000/sky.png"
+  }
+}
+
+setInterval(() => {// code for time and date
+       date=new Date();
+   day=date.getDate();
+   year=date.getFullYear();
+   hours=date.getHours();
+   min=date.getMinutes();
+  sec=date.getSeconds();
+   (min<10)? min1=`0${min}`:min1=min;;
+   (sec<10)? sec1=`0${sec}`:sec1=sec;
+   (hours>=12)?hour1=hours-12:hour1=`${hours}`;
+     time=`${hour1 }:${ min1}:${ sec1}`;
+     fullDate=`${day }:${ month+1}:${ year}`;
+time1.innerText=`${time}`
+accurate.innerHTML=`${fullDate}`
+    }, 1000);
+  } catch (error) {
+    alert("city not found");
+  }
+}
+</script>
+</html>

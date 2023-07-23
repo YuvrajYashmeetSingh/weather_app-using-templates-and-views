@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+        <!-- nav bar -->
+ {{>header}}
+<!-- navbar end -->
+<!-- about us -->
+<div class="about">
+    <div class="myself"><h1>about us</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore pariatur ipsum asperiores. Officiis harum qui facere eos voluptatibus libero nesciunt, obcaecati placeat nemo quasi aspernatur laudantium accusantium! Itaque, expedita.</p></div>
+    <div class="webd"><img src="images/wev.jpg" alt=""></div>
+</div>
+<!-- about us end -->
+
+{{>footer}}
+</body>
+<style>
+    .about{
+        height: 40vw;
+        width: 100vw;
+        display: flex;
+
+    }
+    .myself{
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-transform: capitalize;padding-top: 10vw;
+    }
+    .myself h1{
+font-size: 2.5vw;
+color: rgb(56, 55, 55);
+
+
+    }
+    .myself p{
+margin: 2vw;margin-left: 4vw;
+font-size: 1.5vw;
+word-spacing: .5vw;color: rgb(44, 42, 42);
+    }
+    .webd{
+        width: 70vw;
+        display: flex;
+        height: 40vw;
+        justify-content: center;
+
+align-items: center;    }
+    .webd img{
+        width:30vw ;
+        margin-left: 20vw;
+    }
+    @media (max-width:500px){
+        .about{
+        height: 40vw;
+        width: 100vw;
+        display: flex;
+flex-direction: column;
+    }
+    .myself{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-transform: capitalize;padding-top: 10vw;
+    }
+    .myself h1{
+font-size: 5.5vw;
+color: rgb(56, 55, 55);
+
+
+    }
+    .myself p{
+margin: 4vw;margin-left: 8vw;
+font-size: 3.5vw;
+word-spacing: 1.5vw;color: rgb(44, 42, 42);
+    }
+    .webd{
+        width: 100vw;
+        display: flex;
+        height: 40vw;
+        justify-content: center;
+align-items: center;    }
+    .webd img{
+        margin-top: 40vw;
+        width:70vw ;
+        margin-left: 8vw;
+     
+    }
+    }
+</style>
+</html>
